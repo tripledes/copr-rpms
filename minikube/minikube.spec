@@ -1,6 +1,6 @@
 Name:          minikube
 Version:       0.31.0
-Release:       1%{?dist}
+Release:       2%{?dist}
 Summary:       Minikube is a tool that makes it easy to run Kubernetes locally
 
 Group:         Development Tools
@@ -8,7 +8,7 @@ URL:           https://github.com/kubernetes/minikube
 License:       ASL 2.0
 Source0:       https://github.com/kubernetes/minikube/releases/download/v%{version}/%{name}-linux-amd64
 ExclusiveArch: x86_64
-Requires:      docker-machine-driver-kvm
+Requires:      docker-machine-driver-kvm2
 
 %description
 Minikube is a tool that makes it easy to run Kubernetes locally. Minikube
@@ -28,5 +28,8 @@ mkdir -p %{buildroot}/%{_bindir}
 %{_bindir}/%{name}
 
 %changelog
-* Wed Dec 12 2018 Sergi Jimenez <tripledes@fedoraproject.org> - 0.31.1-1
+* Wed Dec 12 2018 Sergi Jimenez <tripledes@fedoraproject.org> - 0.31.0-2
+- Depend on docker-machine-driver-kvm2, as v1 is being deprecated.
+
+* Wed Dec 12 2018 Sergi Jimenez <tripledes@fedoraproject.org> - 0.31.0-1
 - Initial import
