@@ -1,5 +1,5 @@
 Name:          minishift
-Version:       1.32.0
+Version:       1.33.0
 Release:       1%{?dist}
 Summary:       Run OpenShift locally
 
@@ -29,6 +29,9 @@ mkdir -p %{buildroot}/%{_bindir}
 %{_bindir}/%{name}
 
 %changelog
+* Sun Mar 31 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 1.33.0-1
+- Bump version 1.33.0
+
 * Tue Mar  5 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 1.32.0-1
 - Bump version 1.32.0
 
