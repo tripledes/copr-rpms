@@ -54,5 +54,5 @@ make
 %{_datadir}/zsh/site-functions/_%{name}_msg
 
 %changelog
-* Fri Apr  4 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 3.3.1-1
+* Fri Apr  5 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 3.3.1-1
 - Initial import
