@@ -4,11 +4,11 @@ Release:        1
 Summary:        A fast and easy-to-use status bar
 License:        MIT
 URL:            https://github.com/jaagr/polybar
-Source:         https://github.com/jaagr/polybar/archive/%{version}.tar.gz
+Source:         https://github.com/jaagr/polybar/releases/download/%{version}/%{name}-%{version}.tar
 BuildRequires:  clang >= 3.4
 BuildRequires:  cmake >= 3.1
 BuildRequires:  cairo-devel
-BuildRequires:  xcb-util-devel 
+BuildRequires:  xcb-util-devel
 BuildRequires:  libxcb-devel
 BuildRequires:  xcb-proto
 BuildRequires:  xcb-util-image-devel
@@ -30,14 +30,17 @@ BuildRequires:  alsa-lib-devel
 A fast and easy-to-use status bar for tilling WM
 
 %prep
-%setup -q
+%setup -n %{name}
+mkdir build
 
 %build
-%cmake
-make
+cd build
+%{cmake} ..
+%{make_build}
 
 %install
-%cmake_install
+cd build
+%{make_install}
 
 %files
 %dir %{_datadir}/bash-completion/
@@ -48,7 +51,7 @@ make
 %{_bindir}/%{name}
 %{_bindir}/%{name}-msg
 %{_datadir}/doc/%{name}/config
-%{_mandir}/man1/%{name}.1%{?ext_man}
+%{_mandir}/man1/%{name}.1.gz
 %{_datadir}/bash-completion/completions/%{name}
 %{_datadir}/zsh/site-functions/_%{name}
 %{_datadir}/zsh/site-functions/_%{name}_msg
