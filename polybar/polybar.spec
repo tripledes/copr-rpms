@@ -5,7 +5,7 @@ Summary:        A fast and easy-to-use status bar
 License:        MIT
 URL:            https://github.com/jaagr/polybar
 Source:         https://github.com/jaagr/polybar/releases/download/%{version}/%{name}-%{version}.tar
-BuildRequires:  python3
+BuildRequires:  python2
 BuildRequires:  clang >= 3.4
 BuildRequires:  cmake >= 3.1
 BuildRequires:  cairo-devel
