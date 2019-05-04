@@ -1,10 +1,12 @@
 Name:           polybar
 Version:        3.3.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A fast and easy-to-use status bar
 License:        MIT
 URL:            https://github.com/jaagr/polybar
 Source:         https://github.com/jaagr/polybar/releases/download/%{version}/%{name}-%{version}.tar
+patch0:         matches-uninitialized-cairo-context.hpp.diff
+patch1:         window-gcc9.diff
 BuildRequires:  python2
 BuildRequires:  clang >= 3.4
 BuildRequires:  cmake >= 3.1
@@ -37,6 +39,9 @@ A fast and easy-to-use status bar for tilling WM
 %setup -q -n %{name}
 mkdir build
 
+%patch0 -p1
+%patch1 -p1
+
 %build
 cd build
 %{cmake} ..
@@ -61,6 +66,9 @@ cd build
 %{_datadir}/zsh/site-functions/_%{name}_msg
 
 %changelog
+* Sat May  4 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 3.3.1-3
+- Patches for f30
+
 * Sat Apr 27 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 3.3.1-2
 - Spec improvements
 
