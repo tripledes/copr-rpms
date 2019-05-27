@@ -1,6 +1,6 @@
 Name:          crc
 Version:       0.86.0
-Release:       1%{?dist}
+Release:       2%{?dist}
 Summary:       This project is focused on bringing a minimal OpenShift 4.0 or newer cluster to your local laptop or desktop computer.
 
 Group:         Development Tools
@@ -16,15 +16,18 @@ This project is focused on bringing a minimal OpenShift 4.0 or newer cluster to 
 %build
 
 %prep
-%setup -q -T -c
+%setup -q -c
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
-%{__install} -m 755 %{SOURCE0} %{buildroot}/%{_bindir}/%{name}
+%{__install} -m 755 %{name} %{buildroot}/%{_bindir}/%{name}
 
 %files
 %{_bindir}/%{name}
 
 %changelog
+* Mon May 27 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 0.86.0-2
+- Handle archive properly
+
 * Mon May 27 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 0.86.0-1
 - Initial import
