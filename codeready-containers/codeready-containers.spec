@@ -1,12 +1,15 @@
 Name:          crc
-Version:       0.88.0
-Release:       2%{?dist}
+Version:       0.89.0.alpha
+Release:       1%{?dist}
 Summary:       This project is focused on bringing a minimal OpenShift 4.0 or newer cluster to your local laptop or desktop computer.
+
+%define        _version 0.89.0
+%define        _status alpha
 
 Group:         Development Tools
 URL:           https://github.com/code-ready/crc
 License:       ASL 2.0
-Source0:       https://github.com/code-ready/crc/releases/download/%{version}/%{name}-%{version}-linux-amd64.tar.xz
+Source0:       https://github.com/code-ready/crc/releases/download/%{_version}/%{name}-%{_version}-%{_status}-linux-amd64.tar.xz
 ExclusiveArch: x86_64
 Requires:      libvirt, qemu-kvm
 
@@ -16,7 +19,7 @@ This project is focused on bringing a minimal OpenShift 4.0 or newer cluster to 
 %build
 
 %prep
-%setup -q -c
+%setup -q -n %{name}-%{_version}-%{_status}-linux-amd64
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
@@ -26,6 +29,9 @@ mkdir -p %{buildroot}/%{_bindir}
 %{_bindir}/%{name}
 
 %changelog
+* Wed Jul 31 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 0.89.0.alpha-1
+- Bumped to 0.89.0-alpha
+
 * Tue Jul  9 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 0.88.0-1
 - Bumped to 0.88.0
 
