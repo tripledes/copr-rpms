@@ -28,7 +28,7 @@ mkdir -p %{buildroot}/%{_bindir}
 %{_bindir}/%{name}
 
 %changelog
-* Tue Nov  6 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 1.5.2-1
+* Wed Nov  6 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 1.5.2-1
 - Bump to 1.5.2
 
 * Tue Jul  2 2019 Edu Minguez <edu@linux.com> - 1.2.0-1
