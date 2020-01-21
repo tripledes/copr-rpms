@@ -1,5 +1,5 @@
 Name:          kind
-Version:       0.5.1
+Version:       0.7.0
 Release:       1%{?dist}
 Summary:       kind is a tool for running local Kubernetes clusters using Docker container "nodes".
 
@@ -26,6 +26,9 @@ mkdir -p %{buildroot}/%{_bindir}
 %{_bindir}/%{name}
 
 %changelog
+* Tue Jan 21 2020 Sergi Jimenez <tripledes@fedoraproject.org> - 0.7.0-1
+- Bump version to 0.7.0
+
 * Thu Oct 10 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 0.5.1-1
 - Bump version to 0.5.1
 
