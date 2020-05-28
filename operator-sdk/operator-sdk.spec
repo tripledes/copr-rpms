@@ -1,6 +1,6 @@
 Name:          operator-sdk
-Version:       0.12.0
-Release:       2%{?dist}
+Version:       0.17.1
+Release:       1%{?dist}
 Summary:       SDK for building Kubernetes applications. Provides high level APIs, useful abstractions, and project scaffolding.
 
 Group:         Development Tools
@@ -26,6 +26,9 @@ mkdir -p %{buildroot}/%{_bindir}
 %{_bindir}/%{name}
 
 %changelog
+* Thu May 28 2020 Sergi Jimenez <tripledes@fedoraproject.org> - 0.17.1-1
+- Bump to 0.17.1
+
 * Wed Nov  6 2019 Sergi Jimenez <tripledes@fedoraproject.org> - 0.12.0-1
 - Bump to 0.12.0
 
