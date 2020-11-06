@@ -1,7 +1,7 @@
 %global srcname s-tui
 
 Name:           %{srcname}
-Version:        1.0.1
+Version:        1.0.2
 Release:        1%{?dist}
 Summary:        Stress-Terminal UI
 
@@ -33,5 +33,8 @@ Stress-Terminal UI, s-tui, monitors CPU temperature, frequency, power and utiliz
 %{_bindir}/%{srcname}
 
 %changelog
+* Fri Nov  6 2020 Sergi Jimenez <tripledes@fedoraproject.org> - 1.0.2-1
+- Bump to 1.0.2
+
 * Thu Jun 25 2020 Sergi Jimenez <tripledes@fedoraproject.org> - 1.0.1-1
 - Initial import
